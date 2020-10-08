@@ -1,14 +1,16 @@
 
 package Cine;
 
+
 import java.awt.Color;
 import javax.swing.JOptionPane;
-
-
+import static laboratorio3.Maininterfaz.disponibilidad;
+import static laboratorio3.Maininterfaz.cine;
+import static laboratorio3.Maininterfaz.sillas;
 
 public class Interfazsillas extends javax.swing.JFrame {
     LógicaCine sillas = new LógicaCine();
-    ConsultaDatos disponibilidad = new ConsultaDatos();
+    
     public Interfazsillas() {
         initComponents();
         
@@ -7437,8 +7439,7 @@ public class Interfazsillas extends javax.swing.JFrame {
         }
         
         
-        Recibo abrir = new Recibo();
-        abrir.setVisible(true);
+       
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignacionActionPerformed

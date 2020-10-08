@@ -10,21 +10,23 @@ package Cine;
  * @author catal
  */
 public class LógicaCine {
-        public Integer preciof1;
-        public Integer preciof2;
-        public Integer preciof3;
-        public Integer preciof4;
-        public Integer preciof5;
-        public Integer preciof6;
-        public Integer preciof7;
-        public Integer preciof8;
-        public Integer preciof9;
-        public Integer preciof10;
-        public Integer preciof11;
-        public Integer preciof12;
-        public Integer preciof13;
-        public Integer preciof14;
-        public Integer preciof15;
+    
+         public int preciof1;
+        public int preciof2;
+        public int preciof3;
+        public int preciof4;
+        public int preciof5;
+        public int preciof6;
+        public int preciof7;
+        public int preciof8;
+        public int preciof9;
+        public int preciof10;
+        public int preciof11;
+        public int preciof12;
+        public int preciof13;
+        public int preciof14;
+        public int preciof15;
+        
         int [] dispo=new int[450];
         int cantidadboletos=0;
         int [] venta = new int[450];

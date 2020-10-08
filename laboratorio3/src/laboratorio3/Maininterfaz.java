@@ -5,15 +5,20 @@
  */
 package laboratorio3;
 
+import Cine.ConsultaDatos;
 import Parqueadero.interfazparqueadero;
 import Cine.InterfazMenuCine;
-
+import Cine.LógicaCine;
+import Cine.ComprasCine;
+import Cine.ConsultaValorFila;
 /**
  *
  * @author Acer
  */
 public class Maininterfaz extends javax.swing.JFrame {
-
+public static ConsultaDatos disponibilidad = new ConsultaDatos();
+public static LógicaCine cine = new LógicaCine();
+public static LógicaCine sillas = new LógicaCine();
     /**
      * Creates new form Maininterfaz
      */

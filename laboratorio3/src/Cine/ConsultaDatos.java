@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 package Cine;
+import static laboratorio3.Maininterfaz.disponibilidad;
 
 /**
  *
  * @author nicolasmedina
  */
 public class ConsultaDatos extends javax.swing.JFrame {
-        LógicaCine cine = new LógicaCine();
         
-        public int sillasocupadas;
+        
+        public int sillasocupadas=0;
         public int sillasocfil1=0;
         public int sillasocfil2=0;
         public int sillasocfil3=0;
@@ -28,6 +29,9 @@ public class ConsultaDatos extends javax.swing.JFrame {
         public int sillasocfil13=0;
         public int sillasocfil14=0;
         public int sillasocfil15=0;
+        public int preciototal=0;
+        
+        
     /**
      * Creates new form ConsultaDatos
      */
@@ -215,7 +219,7 @@ public class ConsultaDatos extends javax.swing.JFrame {
 
     private void dineroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dineroActionPerformed
         // TODO add your handling code here:
-        dinero.setText(String.valueOf(cine.preciototal(cine.fila, cine.columna, cine.preciof1, cine.preciof2, cine.preciof3, cine.preciof4, cine.preciof5, cine.preciof6, cine.preciof7, cine.preciof8, cine.preciof9, cine.preciof10, cine.preciof11, cine.preciof12, cine.preciof13, cine.preciof14, cine.preciof15)));
+        
     }//GEN-LAST:event_dineroActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -234,101 +238,103 @@ public class ConsultaDatos extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        disponibles.setText(String.valueOf(sillasocupadas));
         
-        disponibles.setText(String.valueOf(450- sillasocupadas));
+        
+        disponibles.setText(String.valueOf(disponibilidad.sillasocupadas));
+        
+        disponibles.setText(String.valueOf(450- disponibilidad.sillasocupadas));
         
         //Compradas
         if(filas.getSelectedItem()=="1"){
-            compradasfila.setText(String.valueOf(sillasocfil1)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil1)); 
         }
         else if(filas.getSelectedItem()=="2"){
-            compradasfila.setText(String.valueOf(sillasocfil2)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil2)); 
         }
         else if(filas.getSelectedItem()=="3"){
-            compradasfila.setText(String.valueOf(sillasocfil3)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil3)); 
         }
         else if(filas.getSelectedItem()=="4"){
-            compradasfila.setText(String.valueOf(sillasocfil4)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil4)); 
         }
         else if(filas.getSelectedItem()=="5"){
-            compradasfila.setText(String.valueOf(sillasocfil5)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil5)); 
         }
         else if(filas.getSelectedItem()=="6"){
-            compradasfila.setText(String.valueOf(sillasocfil6)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil6)); 
         }
         else if(filas.getSelectedItem()=="7"){
-            compradasfila.setText(String.valueOf(sillasocfil7)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil7)); 
         }
         else if(filas.getSelectedItem()=="8"){
-            compradasfila.setText(String.valueOf(sillasocfil8)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil8)); 
         }
         else if(filas.getSelectedItem()=="9"){
-            compradasfila.setText(String.valueOf(sillasocfil9)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil9)); 
         }
         else if(filas.getSelectedItem()=="10"){
-            compradasfila.setText(String.valueOf(sillasocfil10)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil10)); 
         }
         else if(filas.getSelectedItem()=="11"){
-            compradasfila.setText(String.valueOf(sillasocfil11)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil11)); 
         }
         else if(filas.getSelectedItem()=="12"){
-            compradasfila.setText(String.valueOf(sillasocfil12)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil12)); 
         }
         else if(filas.getSelectedItem()=="13"){
-            compradasfila.setText(String.valueOf(sillasocfil13)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil13)); 
         }
         else if(filas.getSelectedItem()=="14"){
-            compradasfila.setText(String.valueOf(sillasocfil14)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil14)); 
         }
         else {
-            compradasfila.setText(String.valueOf(sillasocfil15)); 
+            compradasfila.setText(String.valueOf(disponibilidad.sillasocfil15)); 
         }
     //Disponibles
         if(filas.getSelectedItem()=="1"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil1)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil1)); 
         }
         else if(filas.getSelectedItem()=="2"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil2)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil2)); 
         }
         else if(filas.getSelectedItem()=="3"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil3)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil3)); 
         }
         else if(filas.getSelectedItem()=="4"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil4)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil4)); 
         }
         else if(filas.getSelectedItem()=="5"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil5)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil5)); 
         }
         else if(filas.getSelectedItem()=="6"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil6)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil6)); 
         }
         else if(filas.getSelectedItem()=="7"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil7)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil7)); 
         }
         else if(filas.getSelectedItem()=="8"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil8)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil8)); 
         }
         else if(filas.getSelectedItem()=="9"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil9)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil9)); 
         }
         else if(filas.getSelectedItem()=="10"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil10)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil10)); 
         }
         else if(filas.getSelectedItem()=="11"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil11)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil11)); 
         }
         else if(filas.getSelectedItem()=="12"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil12)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil12)); 
         }
         else if(filas.getSelectedItem()=="13"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil13)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil13)); 
         }
         else if(filas.getSelectedItem()=="14"){
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil14)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil14)); 
         }
         else {
-            disponiblesfila.setText(String.valueOf(30 - sillasocfil15)); 
+            disponiblesfila.setText(String.valueOf(30 - disponibilidad.sillasocfil15)); 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -6,16 +6,15 @@
 package Cine;
 
 import javax.swing.JOptionPane;
-
+import static laboratorio3.Maininterfaz.disponibilidad;
+import static laboratorio3.Maininterfaz.cine;
 /**
  *
  * @author catal
  */
 public class ComprasCine extends javax.swing.JFrame {
     LógicaCine cine = new LógicaCine();
-    /**
-     * Creates new form ComprasCine
-     */
+   
     public ComprasCine() {
         initComponents();
         
@@ -213,26 +212,26 @@ public class ComprasCine extends javax.swing.JFrame {
         else{
             
             
-            cine.preciof1 = Integer.valueOf(fila1.getText()); 
-            cine.preciof2 = Integer.valueOf(fila2.getText()); 
-            cine.preciof3 = Integer.valueOf(fila3.getText()); 
-            cine.preciof4 = Integer.valueOf(fila4.getText()); 
-            cine.preciof5 = Integer.valueOf(fila5.getText()); 
-            cine.preciof6 = Integer.valueOf(fila6.getText()); 
-            cine.preciof7 = Integer.valueOf(fila7.getText()); 
-            cine.preciof8 = Integer.valueOf(fila8.getText()); 
-            cine.preciof9 = Integer.valueOf(fila9.getText()); 
-            cine.preciof10 = Integer.valueOf(fila10.getText()); 
-            cine.preciof11 = Integer.valueOf(fila11.getText()); 
-            cine.preciof12 = Integer.valueOf(fila12.getText()); 
-            cine.preciof13 = Integer.valueOf(fila13.getText()); 
-            cine.preciof14 = Integer.valueOf(fila14.getText());
-            cine.preciof15 = Integer.valueOf(fila15.getText()); 
-          
-        }
-        InterfazMenuCine abrir = new InterfazMenuCine();
+            cine.preciof1 = Integer.parseInt(fila1.getText()); 
+            cine.preciof2 = Integer.parseInt(fila2.getText()); 
+            cine.preciof3 = Integer.parseInt(fila3.getText()); 
+            cine.preciof4 = Integer.parseInt(fila4.getText()); 
+            cine.preciof5 = Integer.parseInt(fila5.getText()); 
+            cine.preciof6 = Integer.parseInt(fila6.getText()); 
+            cine.preciof7 = Integer.parseInt(fila7.getText()); 
+            cine.preciof8 = Integer.parseInt(fila8.getText()); 
+            cine.preciof9 = Integer.parseInt(fila9.getText()); 
+            cine.preciof10 = Integer.parseInt(fila10.getText()); 
+            cine.preciof11 = Integer.parseInt(fila11.getText()); 
+            cine.preciof12 = Integer.parseInt(fila12.getText()); 
+            cine.preciof13 = Integer.parseInt(fila13.getText()); 
+            cine.preciof14 = Integer.parseInt(fila14.getText());
+            cine.preciof15 = Integer.parseInt(fila15.getText()); 
+          InterfazMenuCine abrir = new InterfazMenuCine();
         abrir.setVisible(true);
         this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_guardarActionPerformed
 
     private void fila1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fila1ActionPerformed

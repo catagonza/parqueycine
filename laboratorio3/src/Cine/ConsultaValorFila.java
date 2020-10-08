@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 package Cine;
-
+import static laboratorio3.Maininterfaz.disponibilidad;
+import static laboratorio3.Maininterfaz.cine;
 /**
  *
  * @author Juan Diego
  */
 public class ConsultaValorFila extends javax.swing.JFrame {
-    LógicaCine preciosfila = new LógicaCine();
-
+     LógicaCine cine = new LógicaCine();
+        
     /**
      * Creates new form ConsultaValorFila
      */
     public ConsultaValorFila() {
         initComponents();
+        
     }
 
     /**
@@ -61,6 +63,7 @@ public class ConsultaValorFila extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        consultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,6 +209,14 @@ public class ConsultaValorFila extends javax.swing.JFrame {
         jLabel23.setText("Precio Fila 6");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 100, 20));
 
+        consultar.setText("Consultar");
+        consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -234,21 +245,8 @@ public class ConsultaValorFila extends javax.swing.JFrame {
 
     private void fila1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fila1ActionPerformed
         // TODO add your handling code here:
-        fila1.setText(String.valueOf(preciosfila.preciof1));
-        fila2.setText(String.valueOf(preciosfila.preciof2));
-        fila3.setText(String.valueOf(preciosfila.preciof3));
-        fila4.setText(String.valueOf(preciosfila.preciof4));
-        fila5.setText(String.valueOf(preciosfila.preciof5));
-        fila6.setText(String.valueOf(preciosfila.preciof6));
-        fila7.setText(String.valueOf(preciosfila.preciof7));
-        fila8.setText(String.valueOf(preciosfila.preciof8));
-        fila9.setText(String.valueOf(preciosfila.preciof9));
-        fila10.setText(String.valueOf(preciosfila.preciof10));
-        fila11.setText(String.valueOf(preciosfila.preciof11));
-        fila12.setText(String.valueOf(preciosfila.preciof12));
-        fila13.setText(String.valueOf(preciosfila.preciof13));
-        fila14.setText(String.valueOf(preciosfila.preciof14));
-        fila15.setText(String.valueOf(preciosfila.preciof15));
+        
+        
             
     }//GEN-LAST:event_fila1ActionPerformed
 
@@ -271,6 +269,27 @@ public class ConsultaValorFila extends javax.swing.JFrame {
     private void fila6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fila6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fila6ActionPerformed
+
+    private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
+        // TODO add your handling code here:
+        
+        fila1.setText(String.valueOf(cine.preciof1));
+        fila2.setText(String.valueOf(cine.preciof2));
+        fila3.setText(String.valueOf(cine.preciof3));
+        fila4.setText(String.valueOf(cine.preciof4));
+        fila5.setText(String.valueOf(cine.preciof5));
+        fila6.setText(String.valueOf(cine.preciof6));
+        fila7.setText(String.valueOf(cine.preciof7));
+        fila8.setText(String.valueOf(cine.preciof8));
+        fila9.setText(String.valueOf(cine.preciof9));
+        fila10.setText(String.valueOf(cine.preciof10));
+        fila11.setText(String.valueOf(cine.preciof11));
+        fila12.setText(String.valueOf(cine.preciof12));
+        fila13.setText(String.valueOf(cine.preciof13));
+        fila14.setText(String.valueOf(cine.preciof14));
+        fila15.setText(String.valueOf(cine.preciof15));
+        
+    }//GEN-LAST:event_consultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,6 +328,7 @@ public class ConsultaValorFila extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Volver;
+    private javax.swing.JButton consultar;
     private javax.swing.JTextField fila1;
     private javax.swing.JTextField fila10;
     private javax.swing.JTextField fila11;
