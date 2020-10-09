@@ -246,7 +246,7 @@ public class ConsultaDatos extends javax.swing.JFrame {
         
         dinero.setText(String.valueOf(platatotal));
         
-        disponibles.setText(String.valueOf(disponibilidad.sillasocupadas));
+        compradas.setText(String.valueOf(disponibilidad.sillasocupadas));
         
         disponibles.setText(String.valueOf(450- disponibilidad.sillasocupadas));
         

@@ -9,8 +9,7 @@ import static laboratorio3.Maininterfaz.cine;
 import static laboratorio3.Maininterfaz.sillas;
 
 public class Interfazsillas extends javax.swing.JFrame {
-    ConsultaValorFila valorfila = new ConsultaValorFila();
-    LógicaCine cine = new LógicaCine();
+    
     
     public Interfazsillas() {
         initComponents();
@@ -4606,7 +4605,7 @@ public class Interfazsillas extends javax.swing.JFrame {
                 AceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(Aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 820, -1, 40));
+        jPanel1.add(Aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, 40));
 
         asignacion.setText("Volver");
         asignacion.addActionListener(new java.awt.event.ActionListener() {
@@ -4614,7 +4613,7 @@ public class Interfazsillas extends javax.swing.JFrame {
                 asignacionActionPerformed(evt);
             }
         });
-        jPanel1.add(asignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 820, 100, 40));
+        jPanel1.add(asignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 100, 40));
 
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 0, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -7395,7 +7394,7 @@ public class Interfazsillas extends javax.swing.JFrame {
        fsilla13=0;
        fsilla14=0;
        fsilla15=0;
-       preciocompra=0;
+       
         for (silla=0;silla<450;silla++){
             
             if (sillas.dispo[silla] == 1){ 
@@ -7486,8 +7485,8 @@ public class Interfazsillas extends javax.swing.JFrame {
            }
         }
         
-        preciocompra = (fsilla1*cine.preciof1)+(fsilla2*cine.preciof2)+(fsilla3*cine.preciof3)+(fsilla4*cine.preciof4)+(fsilla5*cine.preciof5)+
-                (fsilla6*cine.preciof6)+(fsilla7*cine.preciof7)+(fsilla8*cine.preciof8)+(fsilla9*cine.preciof9)+(fsilla10*cine.preciof10)+
+        preciocompra =(fsilla1 * cine.preciof1)+(fsilla2 * cine.preciof2)+(fsilla3 * cine.preciof3)+(fsilla4*cine.preciof4)+(fsilla5*cine.preciof5)+
+                (fsilla6 * cine.preciof6)+(fsilla7*cine.preciof7)+(fsilla8 * cine.preciof8)+(fsilla9*cine.preciof9)+(fsilla10*cine.preciof10)+
                 (fsilla11*cine.preciof11)+(fsilla12*cine.preciof12)+(fsilla13*cine.preciof13)+(fsilla14*cine.preciof14)+(fsilla15*cine.preciof15);
         JOptionPane.showMessageDialog(null, "El precio de sus boletas es " + preciocompra);
         
