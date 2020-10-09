@@ -9,7 +9,8 @@ import static laboratorio3.Maininterfaz.cine;
 import static laboratorio3.Maininterfaz.sillas;
 
 public class Interfazsillas extends javax.swing.JFrame {
-    LógicaCine sillas = new LógicaCine();
+    ConsultaValorFila valorfila = new ConsultaValorFila();
+    LógicaCine cine = new LógicaCine();
     
     public Interfazsillas() {
         initComponents();
@@ -18,6 +19,22 @@ public class Interfazsillas extends javax.swing.JFrame {
        
        int silla;
        int ocupados=0;
+       int fsilla1=0;
+       int fsilla2=0;
+       int fsilla3=0;
+       int fsilla4=0;
+       int fsilla5=0;
+       int fsilla6=0;
+       int fsilla7=0;
+       int fsilla8=0;
+       int fsilla9=0;
+       int fsilla10=0;
+       int fsilla11=0;
+       int fsilla12=0;
+       int fsilla13=0;
+       int fsilla14=0;
+       int fsilla15=0;
+       int preciocompra=0;
        
     /**
      * This method is called from within the constructor to initialize the form.
@@ -7363,6 +7380,22 @@ public class Interfazsillas extends javax.swing.JFrame {
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         // TODO add your handling code here:
+       fsilla1=0;
+       fsilla2=0;
+       fsilla3=0;
+       fsilla4=0;
+       fsilla5=0;
+       fsilla6=0;
+       fsilla7=0;
+       fsilla8=0;
+       fsilla9=0;
+       fsilla10=0;
+       fsilla11=0;
+       fsilla12=0;
+       fsilla13=0;
+       fsilla14=0;
+       fsilla15=0;
+       preciocompra=0;
         for (silla=0;silla<450;silla++){
             
             if (sillas.dispo[silla] == 1){ 
@@ -7374,62 +7407,77 @@ public class Interfazsillas extends javax.swing.JFrame {
                 if(sillas.fila[silla]==1)
                 {
                     disponibilidad.sillasocfil1++;
+                    fsilla1++;
                 }
                 else if(sillas.fila[silla]==2)
                 {
                     disponibilidad.sillasocfil2++;
+                    fsilla2++;
                 }
                 else if(sillas.fila[silla]==3)
                 {
                     disponibilidad.sillasocfil3++;
+                    fsilla3++;
                 }
                 else if(sillas.fila[silla]==4)
                 {
                     disponibilidad.sillasocfil4++;
+                    fsilla14++;
                 }
                 else if(sillas.fila[silla]==5)
                 {
                     disponibilidad.sillasocfil5++;
+                    fsilla5++;
                 }
                 else if(sillas.fila[silla]==6)
                 {
                     disponibilidad.sillasocfil6++;
+                    fsilla6++;
                 }
                 else if(sillas.fila[silla]==7)
                 {
                     disponibilidad.sillasocfil7++;
+                    fsilla7++;
                 }
                 else if(sillas.fila[silla]==8)
                 {
                     disponibilidad.sillasocfil8++;
+                    fsilla8++;
                 }
                 else if(sillas.fila[silla]==9)
                 {
                     disponibilidad.sillasocfil9++;
+                    fsilla9++;
                 }
                 else if(sillas.fila[silla]==10)
                 {
                     disponibilidad.sillasocfil10++;
+                    fsilla10++;
                 }
                 else if(sillas.fila[silla]==11)
                 {
                     disponibilidad.sillasocfil11++;
+                    fsilla11++;
                 }
                 else if(sillas.fila[silla]==12)
                 {
                     disponibilidad.sillasocfil12++;
+                    fsilla12++;
                 }
                 else if(sillas.fila[silla]==13)
                 {
                     disponibilidad.sillasocfil13++;
+                    fsilla13++;
                 }
                 else if(sillas.fila[silla]==14)
                 {
                     disponibilidad.sillasocfil14++;
+                    fsilla14++;
                 }
                 else if(sillas.fila[silla]==15)
                 {
                     disponibilidad.sillasocfil15++;
+                    fsilla15++;
                 }
 
                 if (sillas.venta[silla]!=0)
@@ -7438,6 +7486,10 @@ public class Interfazsillas extends javax.swing.JFrame {
            }
         }
         
+        preciocompra = (fsilla1*cine.preciof1)+(fsilla2*cine.preciof2)+(fsilla3*cine.preciof3)+(fsilla4*cine.preciof4)+(fsilla5*cine.preciof5)+
+                (fsilla6*cine.preciof6)+(fsilla7*cine.preciof7)+(fsilla8*cine.preciof8)+(fsilla9*cine.preciof9)+(fsilla10*cine.preciof10)+
+                (fsilla11*cine.preciof11)+(fsilla12*cine.preciof12)+(fsilla13*cine.preciof13)+(fsilla14*cine.preciof14)+(fsilla15*cine.preciof15);
+        JOptionPane.showMessageDialog(null, "El precio de sus boletas es " + preciocompra);
         
        
     }//GEN-LAST:event_AceptarActionPerformed

@@ -18,7 +18,6 @@ public class ComprasCine extends javax.swing.JFrame {
    
     public ComprasCine() {
         initComponents();
-        
 
     }
         

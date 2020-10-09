@@ -5,7 +5,7 @@
  */
 package Cine;
 import static laboratorio3.Maininterfaz.disponibilidad;
-
+import static laboratorio3.Maininterfaz.cine;
 /**
  *
  * @author nicolasmedina
@@ -30,6 +30,7 @@ public class ConsultaDatos extends javax.swing.JFrame {
         public int sillasocfil14=0;
         public int sillasocfil15=0;
         public int preciototal=0;
+        private int platatotal=0;
         
         
     /**
@@ -238,7 +239,12 @@ public class ConsultaDatos extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        platatotal=(disponibilidad.sillasocfil1*cine.preciof1)+(disponibilidad.sillasocfil2*cine.preciof2)+(disponibilidad.sillasocfil3*cine.preciof3)
+        +(disponibilidad.sillasocfil4*cine.preciof4)+(disponibilidad.sillasocfil5*cine.preciof5)+(disponibilidad.sillasocfil6*cine.preciof6)+(disponibilidad.sillasocfil7*cine.preciof7)
+        +(disponibilidad.sillasocfil8*cine.preciof8)+(disponibilidad.sillasocfil9*cine.preciof9)+(disponibilidad.sillasocfil10*cine.preciof10)+(disponibilidad.sillasocfil11*cine.preciof11)
+        +(disponibilidad.sillasocfil12*cine.preciof12)+(disponibilidad.sillasocfil13*cine.preciof13)+(disponibilidad.sillasocfil14*cine.preciof14)+(disponibilidad.sillasocfil15*cine.preciof15);
         
+        dinero.setText(String.valueOf(platatotal));
         
         disponibles.setText(String.valueOf(disponibilidad.sillasocupadas));
         
