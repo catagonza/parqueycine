@@ -8,12 +8,13 @@ package Cine;
 import javax.swing.JOptionPane;
 import static laboratorio3.Maininterfaz.disponibilidad;
 import static laboratorio3.Maininterfaz.cine;
+
 /**
  *
  * @author catal
  */
 public class ComprasCine extends javax.swing.JFrame {
-    LógicaCine cine = new LógicaCine();
+  ConsultaValorFila valorfila =new ConsultaValorFila();
    
     public ComprasCine() {
         initComponents();

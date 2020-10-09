@@ -19,6 +19,7 @@ public class Maininterfaz extends javax.swing.JFrame {
 public static ConsultaDatos disponibilidad = new ConsultaDatos();
 public static LógicaCine cine = new LógicaCine();
 public static LógicaCine sillas = new LógicaCine();
+public static ConsultaValorFila valorfila =new ConsultaValorFila();
     /**
      * Creates new form Maininterfaz
      */

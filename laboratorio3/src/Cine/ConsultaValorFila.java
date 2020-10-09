@@ -11,7 +11,7 @@ import static laboratorio3.Maininterfaz.cine;
  * @author Juan Diego
  */
 public class ConsultaValorFila extends javax.swing.JFrame {
-     LógicaCine cine = new LógicaCine();
+    
         
     /**
      * Creates new form ConsultaValorFila
