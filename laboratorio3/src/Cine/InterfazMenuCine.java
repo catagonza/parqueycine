@@ -24,6 +24,7 @@ public class InterfazMenuCine extends javax.swing.JFrame {
         Datos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        Compras1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -32,13 +33,13 @@ public class InterfazMenuCine extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Compras.setBackground(new java.awt.Color(255, 255, 255));
-        Compras.setText("Compras");
+        Compras.setText("Comprar");
         Compras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComprasActionPerformed(evt);
             }
         });
-        jPanel1.add(Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 170, 60));
+        jPanel1.add(Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 170, 60));
 
         Datos.setBackground(new java.awt.Color(255, 255, 255));
         Datos.setText("Consulta de datos ");
@@ -47,7 +48,7 @@ public class InterfazMenuCine extends javax.swing.JFrame {
                 DatosActionPerformed(evt);
             }
         });
-        jPanel1.add(Datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 170, 60));
+        jPanel1.add(Datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 170, 60));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -59,6 +60,15 @@ public class InterfazMenuCine extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("BIENVENID@ A CINE COLOMBIA");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+
+        Compras1.setBackground(new java.awt.Color(255, 255, 255));
+        Compras1.setText("Continuar comprando");
+        Compras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Compras1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Compras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 170, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,6 +95,11 @@ public class InterfazMenuCine extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ComprasActionPerformed
+
+    private void Compras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Compras1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_Compras1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +139,7 @@ public class InterfazMenuCine extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Compras;
+    private javax.swing.JButton Compras1;
     private javax.swing.JButton Datos;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
