@@ -1,14 +1,20 @@
 
 package Parqueadero;
 
+import java.time.LocalDateTime;
  import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 public class Logicaparqueadero {
 public int vacantescarros=12;
 public int vacantesmotos=8;
 public int vacantesbicicletas=6;
+public long totalbici;
+public long totalcarro;
+public long totalmoto;
+public long preciobici=0;
+public long preciocarro=0;
+public long preciomoto=0;
 
 public ArrayList<puestosbici> Puestob;
 public ArrayList<puestoscarro> Puestoc;
@@ -114,7 +120,7 @@ public Logicaparqueadero(){
         long precio = this.calcularPrecioCarro(fechasalida, this.buscarCarro(placa));
         for(int i=0; i<=this.Puestoc.size(); i++)
             if(this.Puestoc.get(i).getcarro()!= null && 
-                     this.Puestoc.get(i).getcarro().getPlaca().equalsIgnoreCase(placa)){
+                this.Puestoc.get(i).getcarro().getPlaca().equalsIgnoreCase(placa)){
                 this.Puestoc.get(i).setcarro(null);
                 this.Puestoc.get(i).setEstado("Libre");
                 return "Se ha retirado correctamente, debe pagar " + precio;
@@ -136,7 +142,22 @@ public String retirarmoto(String placa, Date fechasalida){
         }
         return mensaje;
 }
-
+  // calcular total
+    public long preciobici(){
+        long precio = preciobici;
+        totalbici=+precio;
+        return totalbici;
+    }
+    public long preciocarro(){
+        long precio = preciocarro;
+        totalcarro=+precio;
+        return totalcarro;
+    }
+    public long preciomoto(){
+        long precio = preciomoto;
+        totalmoto=+precio;
+        return totalmoto;
+    }
  //información de puestos
     public String InfoPuestosLibresBici(){
         String libresb = "";
@@ -220,24 +241,33 @@ public String retirarmoto(String placa, Date fechasalida){
 
 //calculos
     public long calcularPrecioBici(Date fechasalida, bicicletas Bici){
+        LocalDateTime locaDate = LocalDateTime.now();
+        int hours  = locaDate.getHour();
         
         long costob = 10;
         long canttiempo= fechasalida.getTime()-Bici.getFechaingreso().getTime();
         long minutos= canttiempo/(60*1000);
         if(minutos == 600){
             costob=13000;
-        }else {
+        }else if(hours==18) {
+            costob=(costob+5)*minutos;
+        }else{
             costob=(costob*minutos);
         }
         System.out.println(minutos +" minutos ");
         return costob;
     }
     public long calcularPrecioCarro(Date fechasalida, carros Carro){
+        LocalDateTime locaDate = LocalDateTime.now();
+        int hours  = locaDate.getHour();
+        
         long costoc = 75;
         long canttiempo= fechasalida.getTime()-Carro.getFechaingreso().getTime();
         long minutos= canttiempo/(60*1000);
         if(minutos ==600){
             costoc=13000;
+        }else if(hours==18) {
+            costoc=(costoc+5)*minutos;
         }else{
              costoc=(costoc*minutos);
         }
@@ -245,11 +275,16 @@ public String retirarmoto(String placa, Date fechasalida){
         return costoc;
     }
     public long calcularPrecioMoto(Date fechasalida, motos Moto){
+        LocalDateTime locaDate = LocalDateTime.now();
+        int hours  = locaDate.getHour();
+        
         long costom = 20;
         long canttiempo= fechasalida.getTime()-Moto.getFechaingreso().getTime();
         long minutos= canttiempo/(60*1000);
         if(minutos ==600){
             costom=13000;
+        }else if(hours==18) {
+            costom=(costom+5)*minutos;
         }else{
              costom=(costom*minutos);
         }

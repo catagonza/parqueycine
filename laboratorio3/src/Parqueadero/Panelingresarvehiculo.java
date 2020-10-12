@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 
 
 public class Panelingresarvehiculo extends javax.swing.JFrame {
+
+    private carros Carro;
+    private motos Moto;
+    private bicicletas Bici;
     
     public Panelingresarvehiculo() {
         initComponents();
@@ -45,6 +49,8 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Lista1 = new javax.swing.JComboBox<>();
         Lista2 = new javax.swing.JComboBox<>();
+        Contabilidad = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,19 +179,27 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         });
         jPanel1.add(Lista2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 110, 50));
 
+        Contabilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Vehiculo...", "Carro", "Moto", "Bicicleta" }));
+        Contabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContabilidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Contabilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 120, 40));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel10.setText("Contabilidad");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 100, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -273,8 +287,8 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_CedulaActionPerformed
 
     private void RetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetirarActionPerformed
-       
         Date hfinal = new Date(); 
+        
         if (TipoVehiculo.getSelectedItem()== "Carro")
         {
             String placa = this.Lista2.getSelectedItem().toString();
@@ -314,25 +328,42 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
     private void Lista2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lista2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Lista2ActionPerformed
+
+    private void ContabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContabilidadActionPerformed
+        if (Contabilidad.getSelectedItem()== "Carro")
+        {
+            long totalcarro = parqueadero2.totalcarro;
+            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalcarro);
+        }else if(TipoVehiculo.getSelectedItem()== "Moto"){
+            long totalmoto = parqueadero2.totalmoto;
+            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalmoto);
+
+        }else if (Contabilidad.getSelectedItem() == "Bicicleta")
+        {
+            long totalbici = parqueadero2.totalbici;
+            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalbici);
+        }else {
+            System.out.println("Elija una opcion de Vehiculo");
+        }
+    }//GEN-LAST:event_ContabilidadActionPerformed
         public void llenarCarro(){
         String []carro = parqueadero2.concatenarPlacasCarros().split("~");
         this.Lista2.removeAllItems();
         for(String c: carro)
             this.Lista2.addItem(c);
-        
-    }
-public void llenarBici(){
+        }
+        public void llenarBici(){
         String []bici = parqueadero2.concatenarCedulasBicicletas().split("~");
         this.Lista1.removeAllItems();
         for(String b: bici)
             this.Lista1.addItem(b);
-}
-public void llenarMoto(){
+        }
+        public void llenarMoto(){
         String []moto = parqueadero2.concatenarPlacasMotos().split("~");
         this.Lista3.removeAllItems();
         for(String m: moto)
             this.Lista3.addItem(m);
-}
+        }
         
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -368,6 +399,7 @@ public void llenarMoto(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cedula;
+    private javax.swing.JComboBox<String> Contabilidad;
     private javax.swing.JComboBox<String> Lista1;
     private javax.swing.JComboBox<String> Lista2;
     private javax.swing.JComboBox<String> Lista3;
@@ -377,6 +409,7 @@ public void llenarMoto(){
     private javax.swing.JButton Retirar;
     private javax.swing.JComboBox<String> TipoVehiculo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
