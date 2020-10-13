@@ -2,19 +2,15 @@
 package Parqueadero;
 
 import java.time.LocalDateTime;
- import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Date;
+import static laboratorio3.Maininterfaz.preciofinal;
 
 public class Logicaparqueadero {
 public int vacantescarros=12;
 public int vacantesmotos=8;
 public int vacantesbicicletas=6;
-public long totalbici;
-public long totalcarro;
-public long totalmoto;
-public long preciobici=0;
-public long preciocarro=0;
-public long preciomoto=0;
+public int preciototal=0;
 
 public ArrayList<puestosbici> Puestob;
 public ArrayList<puestoscarro> Puestoc;
@@ -70,7 +66,7 @@ public Logicaparqueadero(){
     }
     public String parquearCarro(String placa, Date fechaingreso){
         String men = "No hay puestos para parquear más carros";
-        
+       
         if(this.buscarCarro(placa) != null)
             return "El carro ya esta parqueado en un puesto";
         
@@ -103,7 +99,7 @@ public Logicaparqueadero(){
     public String retirarBici(String cedula, Date fechasalida){
         String mensaje = "No se ha podido retirar la bicicleta ";
         long precio = this.calcularPrecioBici(fechasalida, this.buscarBici(cedula));
-
+        preciofinal.preciototal += precio;
        for(int i=0; i<=this.Puestob.size(); i++)
             if(this.Puestob.get(i).getBici()!= null && 
                     this.Puestob.get(i).getBici().getCedula().equalsIgnoreCase(cedula)){
@@ -118,6 +114,7 @@ public Logicaparqueadero(){
         String mensaje = "No se ha podido retirar el carro";
 
         long precio = this.calcularPrecioCarro(fechasalida, this.buscarCarro(placa));
+        preciofinal.preciototal += precio;
         for(int i=0; i<=this.Puestoc.size(); i++)
             if(this.Puestoc.get(i).getcarro()!= null && 
                 this.Puestoc.get(i).getcarro().getPlaca().equalsIgnoreCase(placa)){
@@ -131,7 +128,7 @@ public Logicaparqueadero(){
 public String retirarmoto(String placa, Date fechasalida){
         String mensaje = "No se ha podido retirar la moto";
         long precio = this.calcularPrecioMoto(fechasalida, this.buscarMoto(placa));
-        
+        preciofinal.preciototal += precio;
         for(int i=0; i<=this.Puestom.size(); i++){
           if(this.Puestom.get(i).getMoto()!= null && 
                 this.Puestom.get(i).getMoto().getPlaca().equalsIgnoreCase(placa)){
@@ -142,22 +139,7 @@ public String retirarmoto(String placa, Date fechasalida){
         }
         return mensaje;
 }
-  // calcular total
-    public long preciobici(){
-        long precio = preciobici;
-        totalbici=+precio;
-        return totalbici;
-    }
-    public long preciocarro(){
-        long precio = preciocarro;
-        totalcarro=+precio;
-        return totalcarro;
-    }
-    public long preciomoto(){
-        long precio = preciomoto;
-        totalmoto=+precio;
-        return totalmoto;
-    }
+  
  //información de puestos
     public String InfoPuestosLibresBici(){
         String libresb = "";
@@ -254,7 +236,7 @@ public String retirarmoto(String placa, Date fechasalida){
         }else{
             costob=(costob*minutos);
         }
-        System.out.println(minutos +" minutos ");
+        System.out.println(minutos + " minutos ");
         return costob;
     }
     public long calcularPrecioCarro(Date fechasalida, carros Carro){

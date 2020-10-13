@@ -3,7 +3,7 @@ package Parqueadero;
 import static Parqueadero.interfazparqueadero.parqueadero2;
 import java.util.Date;
 import javax.swing.JOptionPane;
-
+import static laboratorio3.Maininterfaz.preciofinal;
 
 public class Panelingresarvehiculo extends javax.swing.JFrame {
 
@@ -49,8 +49,7 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Lista1 = new javax.swing.JComboBox<>();
         Lista2 = new javax.swing.JComboBox<>();
-        Contabilidad = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
+        Totaldia = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,7 +131,7 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
                 RetirarActionPerformed(evt);
             }
         });
-        jPanel1.add(Retirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 120, 40));
+        jPanel1.add(Retirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 120, 40));
 
         textcarros.setColumns(20);
         textcarros.setRows(5);
@@ -179,17 +178,16 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         });
         jPanel1.add(Lista2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 110, 50));
 
-        Contabilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Vehiculo...", "Carro", "Moto", "Bicicleta" }));
-        Contabilidad.addActionListener(new java.awt.event.ActionListener() {
+        Totaldia.setBackground(new java.awt.Color(0, 102, 102));
+        Totaldia.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        Totaldia.setForeground(new java.awt.Color(255, 255, 255));
+        Totaldia.setText("Dinero recaudado");
+        Totaldia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContabilidadActionPerformed(evt);
+                TotaldiaActionPerformed(evt);
             }
         });
-        jPanel1.add(Contabilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 120, 40));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel10.setText("Contabilidad");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 100, -1));
+        jPanel1.add(Totaldia, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 210, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,7 +216,7 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         String placa = this.Placa.getText();
         String cedula=this.Cedula.getText();
         Date Tinicial = new Date(); // Sistema actual La fecha y la hora se asignan a objDate 
-  
+        
         
         if (TipoVehiculo.getSelectedItem()== "Carro")
         {
@@ -255,6 +253,7 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         this.textmotos.setText("Parqueadero\n\n"+parqueadero2.concatenarInfoMoto());
         this.Cedula.setText("");
         this.Placa.setText("");
+        this.Nombre.setText("");
         this.llenarCarro();
         this.llenarBici();
         this.llenarMoto();
@@ -329,23 +328,11 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Lista2ActionPerformed
 
-    private void ContabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContabilidadActionPerformed
-        if (Contabilidad.getSelectedItem()== "Carro")
-        {
-            long totalcarro = parqueadero2.totalcarro;
-            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalcarro);
-        }else if(TipoVehiculo.getSelectedItem()== "Moto"){
-            long totalmoto = parqueadero2.totalmoto;
-            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalmoto);
-
-        }else if (Contabilidad.getSelectedItem() == "Bicicleta")
-        {
-            long totalbici = parqueadero2.totalbici;
-            JOptionPane.showMessageDialog(null,"El valor ganado del dia de carros es:"+totalbici);
-        }else {
-            System.out.println("Elija una opcion de Vehiculo");
-        }
-    }//GEN-LAST:event_ContabilidadActionPerformed
+    private void TotaldiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotaldiaActionPerformed
+        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "El dinero total recaudad es " + preciofinal.preciototal);
+    }//GEN-LAST:event_TotaldiaActionPerformed
         public void llenarCarro(){
         String []carro = parqueadero2.concatenarPlacasCarros().split("~");
         this.Lista2.removeAllItems();
@@ -399,7 +386,6 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cedula;
-    private javax.swing.JComboBox<String> Contabilidad;
     private javax.swing.JComboBox<String> Lista1;
     private javax.swing.JComboBox<String> Lista2;
     private javax.swing.JComboBox<String> Lista3;
@@ -408,8 +394,8 @@ public class Panelingresarvehiculo extends javax.swing.JFrame {
     private javax.swing.JButton Registrar;
     private javax.swing.JButton Retirar;
     private javax.swing.JComboBox<String> TipoVehiculo;
+    private javax.swing.JButton Totaldia;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

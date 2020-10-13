@@ -11,6 +11,7 @@ import Cine.InterfazMenuCine;
 import Cine.LógicaCine;
 import Cine.ComprasCine;
 import Cine.ConsultaValorFila;
+import Parqueadero.Logicaparqueadero;
 /**
  *
  * @author Acer
@@ -20,6 +21,7 @@ public static ConsultaDatos disponibilidad = new ConsultaDatos();
 public static LógicaCine cine = new LógicaCine();
 public static LógicaCine sillas = new LógicaCine();
 public static ConsultaValorFila valorfila =new ConsultaValorFila();
+public static Logicaparqueadero preciofinal = new Logicaparqueadero();
     /**
      * Creates new form Maininterfaz
      */
