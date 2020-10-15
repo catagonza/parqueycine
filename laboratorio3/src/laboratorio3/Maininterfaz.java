@@ -41,34 +41,51 @@ public static Logicaparqueadero preciofinal = new Logicaparqueadero();
         jPanel1 = new javax.swing.JPanel();
         Cinema = new javax.swing.JButton();
         Parking = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
 
-        Cinema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cine.png"))); // NOI18N
-        Cinema.setText("jButton1");
+        Cinema.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        Cinema.setText("Cine");
         Cinema.setContentAreaFilled(false);
         Cinema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CinemaActionPerformed(evt);
             }
         });
-        jPanel1.add(Cinema, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 240, 140));
 
-        Parking.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/parqueadero.png"))); // NOI18N
+        Parking.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        Parking.setText("Parqueadero");
         Parking.setContentAreaFilled(false);
         Parking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ParkingActionPerformed(evt);
             }
         });
-        jPanel1.add(Parking, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 140, 130));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -4, 370, 350));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Parking, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(Cinema, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(Cinema, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Parking, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,7 +95,9 @@ public static Logicaparqueadero preciofinal = new Logicaparqueadero();
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -134,7 +153,6 @@ public static Logicaparqueadero preciofinal = new Logicaparqueadero();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cinema;
     private javax.swing.JButton Parking;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
